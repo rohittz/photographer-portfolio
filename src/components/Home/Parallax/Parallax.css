@@ -1,0 +1,60 @@
+.parallax {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.parallax::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to top, rgba(12, 0, 50, 1), transparent);
+    z-index: 4;
+}
+
+.parallax::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(12, 0, 50, 1);
+    mix-blend-mode: color;
+    z-index: 5;
+}
+
+.parallax img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+#aaron-front {
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 500px;
+    top: 50%;
+    z-index: 2;
+}
+
+#aaron-back {
+    z-index: 0;
+}
+
+.parallax h2 {
+    padding-bottom: 100px;
+    z-index: 1;
+    color: white;
+    color: rgba(0, 0, 0, 0.8);
+    font-family: 'Rancho', cursive;
+}

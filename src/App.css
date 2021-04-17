@@ -1,38 +1,89 @@
+@font-face {
+  font-family: 'HoneyScript-Light';
+  font-weight: 900;
+  src: local('HoneyScript-Light'), url(../src/Fonts/HoneyScript-Light.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Buffalo';
+  font-weight: 900;
+  src: local('Buffalo'), url(../src/Fonts/Buffalo.otf) format('opentype');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+:root {
+  --main-text: rgba(255, 255, 255, 0.8);
+  --main-back-1: rgba(12, 0, 50, 1);
+  --main-back-2: rgba(26, 0, 97, 1);
+  --main-back-3: rgba(35, 0, 144, 1);
+  --main-back-4: rgba(53, 0, 212, 1);
+  --main-back-5: rgba(40, 40, 40, 1);
+}
+
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px) {
+  .parallax {
+    width: 100vw;
+    height: 90vh;
+  }
+  .parallax h2 {
+    font-size: 60px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+/* Small devices (portrait tablets and large phones, 600px and up) */
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (min-width: 600px) {
+  .parallax {
+    width: 100vw;
+    height: 100vh;
   }
-  to {
-    transform: rotate(360deg);
+  .parallax h2 {
+    font-size: 70px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 768px) {
+  .parallax {
+    width: 100vw;
+    height: 100vh;
+  }
+  .parallax h2 {
+    font-size: 80px;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media only screen and (min-width: 992px) {
+  .parallax {
+    width: 100vw;
+    height: 100vh;
+  }
+  .parallax h2 {
+    font-size: 90px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1200px) {
+  .parallax {
+    width: 100vw;
+    height: 100vh;
+  }
+  .parallax h2 {
+    font-size: 100px;
   }
 }
