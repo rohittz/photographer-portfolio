@@ -1,6 +1,6 @@
 import React from 'react';
 import './Service.css';
-import Zoom from 'react-reveal/Zoom';
+import { Zoom } from 'react-reveal'
 const Service = (props) => {
     const service = props?.service;
     return (

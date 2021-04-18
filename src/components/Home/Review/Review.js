@@ -1,11 +1,11 @@
 import React from 'react';
-import { Flip, Zoom, Slide, Fade } from 'react-awesome-reveal';
+import { Fade } from 'react-reveal';
 import './Review.css';
 
 const Review = (props) => {
     const review = props.review;
     return (
-        <Fade left fraction={0.5} enter={true}>
+        <Fade fraction={1} enter={true}>
             <div className="review">
                 <div className="review-inner">
                     <div className="review-user-details">

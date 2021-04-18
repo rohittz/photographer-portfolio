@@ -9,6 +9,7 @@ import peopleIcon from '../../Images/peopleicon.png';
 import './Home.css';
 import Review from './Review/Review';
 import About from './About/About';
+import Gallery from './Gallery/Gallery';
 const services = [
     {
         name: "Wedding",
@@ -87,7 +88,10 @@ const Home = () => {
                     }
                 </div>
             </div>
-
+            {/* gallery */}
+            <div className="gallery-section">
+                <Gallery></Gallery>
+            </div>
         </div>
     );
 };

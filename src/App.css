@@ -31,6 +31,10 @@
   --main-back-5: rgba(40, 40, 40, 1);
 }
 
+body {
+  perspective: 1000px!important;
+}
+
 /* Extra small devices (phones, 600px and down) */
 
 @media only screen and (max-width: 600px) {
@@ -46,17 +50,20 @@
     font-size: 32px;
   }
   .services {
-    padding: 80px 20px;
+    padding: 80px 30px;
     flex-flow: row wrap;
   }
   .service:nth-child(2n+0) {
     margin-top: 0px;
   }
   .testimonials {
-    padding: 80px 20px;
+    padding: 80px 30px;
+  }
+  .gallery-section {
+    padding: 100px 30px;
   }
   .about {
-    padding: 100px 20px;
+    padding: 100px 30px;
   }
 }
 
@@ -82,10 +89,13 @@
     margin-top: 0px;
   }
   .testimonials {
-    padding: 80px 50px;
+    padding: 80px 70px;
+  }
+  .gallery-section {
+    padding: 100px 70px;
   }
   .about {
-    padding: 100px 50px;
+    padding: 100px 70px;
   }
 }
 
@@ -111,6 +121,9 @@
     margin-top: -130px;
   }
   .testimonials {
+    padding: 100px 70px;
+  }
+  .gallery-section {
     padding: 100px 70px;
   }
   .about {
@@ -142,6 +155,9 @@
   .testimonials {
     padding: 100px 150px;
   }
+  .gallery-section {
+    padding: 100px 150px;
+  }
   .about {
     padding: 100px 200px;
   }
@@ -168,8 +184,11 @@
   .testimonials {
     padding: 100px 200px;
   }
+  .gallery-section {
+    padding: 100px 210px;
+  }
   .about {
-    padding: 250px 500px;
+    padding: 250px 300px;
   }
   .service:nth-child(2n+0) {
     margin-top: -130px;
