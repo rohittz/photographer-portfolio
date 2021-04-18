@@ -1,0 +1,59 @@
+.footer, .social, .connect-text {
+    display: flex;
+    color: var(--main-text);
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.connect-text {
+    flex-flow: column;
+    row-gap: 20px;
+}
+
+.footer {
+    width: 100%;
+}
+
+.connect-text>a, .connect-text>div>a {
+    text-decoration: none;
+    color: var(--main-text);
+    letter-spacing: 1.4px;
+    border-bottom: 2px solid transparent;
+    transition: 0.25s all ease-in-out;
+}
+
+.connect-text>a {
+    font-family: 'Rancho', sans-serif;
+    font-size: 30px;
+}
+
+.connect-text>div>a, .connect-text>div {
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.connect-text {
+    margin-left: auto;
+}
+
+.footer a:hover {
+    border-bottom: 2px solid var(--main-text);
+}
+
+.social {
+    row-gap: 10px;
+    margin-left: auto;
+    flex-flow: column;
+}
+
+.icon {
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.25s all ease-in-out;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.icon:hover {
+    color: white;
+}

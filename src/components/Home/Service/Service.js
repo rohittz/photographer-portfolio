@@ -21,7 +21,7 @@ const Service = (props) => {
                     </div>
                 </div>
             </div >
-        </Zoom>
+        </Zoom >
     );
 };
 

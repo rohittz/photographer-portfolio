@@ -10,6 +10,7 @@ import './Home.css';
 import Review from './Review/Review';
 import About from './About/About';
 import Gallery from './Gallery/Gallery';
+import Footer from './Footer/Footer';
 const services = [
     {
         name: "Wedding",
@@ -91,6 +92,10 @@ const Home = () => {
             {/* gallery */}
             <div className="gallery-section">
                 <Gallery></Gallery>
+            </div>
+            {/* footer  */}
+            <div className="footer-section">
+                <Footer></Footer>
             </div>
         </div>
     );

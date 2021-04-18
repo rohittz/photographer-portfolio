@@ -6,7 +6,7 @@ Features:
 
 - "Services section" for let you test my expertise. This section is dynamic. Hence It could be controlled from admin section.
 - "About section" says about something that I feel always.
-- "Testimonial section" says all if I am good or not.
+- "Testimonial section" says all if I am good or not. Yes! You can give review also after logging in.
 - A Gallery for showing some of my best works so far.
 <br/><br/>
 <img src="/src/Images/gallery.png" width="100%" height="100%" align="center"> <br/>
