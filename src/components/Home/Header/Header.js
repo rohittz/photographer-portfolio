@@ -6,6 +6,9 @@ const Header = () => {
 
     return (
         <div className="header">
+            <div className="login-icon">
+                Login
+            </div>
             <Navpage></Navpage>
             <Parallax></Parallax>
         </div>

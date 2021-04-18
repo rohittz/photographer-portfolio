@@ -10,9 +10,11 @@
   src: local('Buffalo'), url(../src/Fonts/Buffalo.otf) format('opentype');
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 .App {
   text-align: center;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
 }
 
 * {
@@ -20,9 +22,10 @@
 }
 
 :root {
-  --main-text: rgba(255, 255, 255, 0.8);
-  --main-back-1: rgba(12, 0, 50, 1);
-  --main-back-2: rgba(26, 0, 97, 1);
+  --main-text: rgb(219, 219, 219);
+  /* --main-back-1: rgba(26, 32, 44, 1); */
+  --main-back-1: rgba(15, 12, 17, 1);
+  --main-back-2: rgb(27, 36, 54);
   --main-back-3: rgba(35, 0, 144, 1);
   --main-back-4: rgba(53, 0, 212, 1);
   --main-back-5: rgba(40, 40, 40, 1);
@@ -38,6 +41,23 @@
   .parallax h2 {
     font-size: 60px;
   }
+  .navbar-container {
+    flex-flow: column;
+    font-size: 32px;
+  }
+  .services {
+    padding: 80px 20px;
+    flex-flow: row wrap;
+  }
+  .service:nth-child(2n+0) {
+    margin-top: 0px;
+  }
+  .testimonials {
+    padding: 80px 20px;
+  }
+  .about {
+    padding: 100px 20px;
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -49,6 +69,23 @@
   }
   .parallax h2 {
     font-size: 70px;
+  }
+  .navbar-container {
+    flex-flow: column;
+    font-size: 34px;
+  }
+  .services {
+    padding: 80px 50px;
+    flex-flow: row wrap;
+  }
+  .service:nth-child(2n+0) {
+    margin-top: 0px;
+  }
+  .testimonials {
+    padding: 80px 50px;
+  }
+  .about {
+    padding: 100px 50px;
   }
 }
 
@@ -62,6 +99,23 @@
   .parallax h2 {
     font-size: 80px;
   }
+  .navbar-container {
+    flex-flow: row nowrap;
+    font-size: 37px;
+  }
+  .services {
+    padding: 150px 50px;
+    flex-flow: row wrap;
+  }
+  .service:nth-child(2n+0) {
+    margin-top: -130px;
+  }
+  .testimonials {
+    padding: 100px 70px;
+  }
+  .about {
+    padding: 100px 80px;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -74,6 +128,23 @@
   .parallax h2 {
     font-size: 90px;
   }
+  .navbar-container {
+    flex-flow: row nowrap;
+    font-size: 41px;
+  }
+  .services {
+    padding: 150px 150px;
+    flex-flow: row wrap;
+  }
+  .service:nth-child(2n+0) {
+    margin-top: -130px;
+  }
+  .testimonials {
+    padding: 100px 150px;
+  }
+  .about {
+    padding: 100px 200px;
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -85,5 +156,22 @@
   }
   .parallax h2 {
     font-size: 100px;
+  }
+  .navbar-container {
+    flex-flow: row nowrap;
+    font-size: 43px;
+  }
+  .services {
+    padding: 150px 200px;
+    flex-flow: row nowrap;
+  }
+  .testimonials {
+    padding: 100px 200px;
+  }
+  .about {
+    padding: 250px 500px;
+  }
+  .service:nth-child(2n+0) {
+    margin-top: -130px;
   }
 }

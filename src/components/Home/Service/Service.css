@@ -1,0 +1,72 @@
+.service {
+    width: 300px;
+    min-width: 230px;
+    position: relative;
+    overflow: hidden;
+    height: 650px;
+    border-radius: 1000px;
+    transition: 0.25s all ease-in-out;
+    background-repeat: no-repeat;
+}
+
+.service .service-inner {
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(40, 40, 40, 0.4); */
+    transition: 0.25s all ease-in-out;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    align-items: center;
+}
+
+.service-inner {
+    position: absolute;
+}
+
+.service:hover>.service-inner {
+    transform: scale(1.1);
+}
+
+.service:hover>.service-inner>.price {
+    opacity: 1;
+}
+
+.service-title {
+    font-size: 25px;
+    letter-spacing: 1.4px;
+    color: rgba(255, 255, 255, 0.7);
+    z-index: 67;
+    font-weight: 500;
+}
+
+.price {
+    color: rgba(255, 255, 255, 1);
+    transition: .25s all ease-in-out;
+    opacity: 0;
+    font-size: 24px;
+}
+
+.price>span {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 5px 10px;
+    border-radius: 60px;
+}
+
+.book-btn {
+    cursor: pointer;
+    text-transform: uppercase;
+    align-self: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 5px 0px;
+    border: 1px solid transparent;
+    font-size: 23px;
+    letter-spacing: 1.5px;
+    transition: 0.25s all ease-in-out;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.book-btn:hover {
+    background-color: var(--main-text);
+    color: black;
+}

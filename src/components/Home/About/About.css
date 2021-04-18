@@ -1,0 +1,16 @@
+.about {
+    background: url('../../../Images//about-image.jpg');
+    background-position: 80% 10%;
+    background-size: cover;
+    position: relative;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+}
+
+.about-text {
+    color: var(--main-text);
+    position: relative;
+    line-height: 31px;
+    text-align: left;
+    z-index: 60;
+}

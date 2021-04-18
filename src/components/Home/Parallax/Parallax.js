@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import aaronFront from '../../../Images/aaron-front.png';
+import aaronFront from '../../../Images/aaron-front1.png';
 import aaronBack from '../../../Images/aaron-back.jpg';
 import './Parallax.css';
 

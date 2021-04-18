@@ -1,0 +1,29 @@
+.navbar-container {
+    color: var(--main-text);
+    display: flex;
+    justify-content: center;
+    row-gap: 30px;
+    column-gap: 60px;
+    align-items: center;
+    z-index: 51;
+}
+
+.nav-block {
+    cursor: pointer;
+    transition: 0.25s all ease-in-out;
+    text-align: left;
+    width: 100%;
+    font-weight: 500;
+}
+
+.nav-block:hover {
+    color: var(--main-text);
+}
+
+.marknv {
+    color: var(--main-text);
+}
+
+.nomarknv {
+    color: rgba(255, 255, 255, 0.3);
+}

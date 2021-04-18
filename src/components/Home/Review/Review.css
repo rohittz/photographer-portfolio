@@ -1,0 +1,42 @@
+.review {
+    background-color: rgba(26, 36, 54, 0.4);
+    color: var(--main-text);
+    /* margin-bottom: 50px; */
+    padding: 20px 20px;
+    transform-origin: 0px 50%;
+    transition: 0.25s all ease-in-out;
+    box-shadow: inset 13px 0 9px -7px rgba(15, 12, 17, 1);
+}
+
+.review:hover {
+    background-color: rgba(25, 36, 54, 0.6);
+}
+
+.reie .review-inner, .review-user-details {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    row-gap: 10px;
+    align-items: center;
+}
+
+.review-user-details {
+    width: 100%;
+    flex-flow: row nowrap;
+    column-gap: 10px;
+    justify-content: flex-start;
+}
+
+.review-text {
+    text-align: left;
+}
+
+.userImage {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.userImage img {
+    width: 100%;
+}

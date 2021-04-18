@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { menuContext } from '../../../App';
+import Navbar from '../Navbar/Navbar';
 import './Navpage.css';
 const Navpage = () => {
-    const [showMenu, setShowMenu] = useState({ display: "none" });
+    const [showMenu, setShowMenu] = useContext(menuContext);
     const showNavPage = () => {
         const bar1 = document.getElementsByClassName('bar1')[0];
         const bar2 = document.getElementsByClassName('bar2')[0];
@@ -10,7 +12,7 @@ const Navpage = () => {
         navPage.style.opacity = "0";
         const newShow = { ...showMenu };
         if (showMenu.display === "none") {
-            newShow.display = "block";
+            newShow.display = "flex";
             navIcon.style.rowGap = "0px";
             bar1.style.transform = "rotateZ(45deg)";
             bar2.style.transform = "rotateZ(-45deg)";
@@ -23,10 +25,10 @@ const Navpage = () => {
         }
         setTimeout(() => {
             setShowMenu(newShow);
-        }, 300);
+        }, 250);
         setTimeout(() => {
             navPage.style.opacity = "1";
-        }, 320);
+        }, 260);
 
     }
     return (
@@ -36,7 +38,7 @@ const Navpage = () => {
                 <div className="bar2"></div>
             </div>
             <div style={showMenu} className="navpage">
-
+                <Navbar></Navbar>
             </div>
         </div>
     );
