@@ -1,5 +1,5 @@
 The live site:
-<iframe src="https://aaron-stanley.web.app/" width="100%" height="100%">
+https://aaron-stanley.web.app/
 
 Features:
 - An header made with parallax effect symbolizes the motion.
