@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import Header from './Header/Header';
 import Service from './Service/Service';
 import wedding from '../../Images/wedding.jpg';
@@ -11,6 +11,8 @@ import Review from './Review/Review';
 import About from './About/About';
 import Gallery from './Gallery/Gallery';
 import Footer from './Footer/Footer';
+import { historyContext } from '../../App';
+import { useControlled } from '@material-ui/core';
 const services = [
     {
         name: "Wedding",
@@ -58,6 +60,11 @@ const reviews = [
     }
 ]
 const Home = () => {
+
+    const [currComp, setCurrComp] = useContext(historyContext);
+    useEffect(() => {
+        setCurrComp("/home");
+    })
     return (
         <div className="home">
             {/* header */}

@@ -1,0 +1,69 @@
+.login {
+    width: 100%;
+    height: 100%;
+    flex-flow: column;
+    row-gap: 30px;
+}
+
+.login-message {
+    font-size: 25px;
+}
+
+.login-third, .iconbox, .third-text, .login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-third {
+    width: 100%;
+    cursor: pointer;
+    transition: 0.2s all ease;
+}
+
+.login-third:active {
+    transform: scale(1.1);
+}
+
+.login-third:hover>.third-text {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: black;
+}
+
+.iconbox {
+    height: 45px;
+    background-color: var(--main-back-3);
+    border-radius: 100px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    width: 39px;
+    padding-left: 5px;
+}
+
+.google-icon {
+    font-size: 21px;
+    color: var(--main-text);
+    transition: 0.4s all ease;
+}
+
+.third-text {
+    width: 100%;
+    height: 41px;
+    padding-left: 10px;
+    transition: 0.4s all ease-in-out;
+    letter-spacing: 1.2px;
+    outline: 0px;
+    font-size: 16px;
+    background-color: var(--main-back-1);
+    border: 0px;
+    position: relative;
+    color: var(--main-text);
+    overflow: hidden;
+    padding: 0px;
+    border-top-right-radius: 20px;
+    font-size: 15px;
+    border-bottom-right-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.9px;
+    height: 45px;
+}

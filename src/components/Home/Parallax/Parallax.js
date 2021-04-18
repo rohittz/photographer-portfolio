@@ -7,13 +7,19 @@ const Parallax = () => {
     let [offset, setoffset] = useState(0);
     useEffect(() => {
         window.onscroll = () => {
-            setoffset(window.pageYOffset);
+            console.log(window.pageYOffset);
+            if (window.pageYOffset < 0) {
+                setoffset(0);
+            }
+            else {
+                setoffset(window.pageYOffset);
+            }
             const name = document.getElementById("aaron-name");
             const backPart = document.getElementById("aaron-back");
             const frontPart = document.getElementById("aaron-front");
-            backPart.style.marginTop = -offset * 0.15 + 'px';
-            name.style.marginTop = offset * 1 + 'px';
-            frontPart.style.marginTop = offset * 0.15 + 'px';
+            backPart.style.marginTop = -offset * 0.04 + 'px';
+            name.style.paddingTop = offset * 1 + 'px';
+            frontPart.style.marginTop = offset * 0.2 + 'px';
         }
     });
     let value = offset;

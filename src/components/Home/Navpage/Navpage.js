@@ -1,10 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import { menuContext } from '../../../App';
 import Navbar from '../Navbar/Navbar';
 import './Navpage.css';
 const Navpage = () => {
     const [showMenu, setShowMenu] = useContext(menuContext);
-    const showNavPage = () => {
+    const toggleNavPage = () => {
         const bar1 = document.getElementsByClassName('bar1')[0];
         const bar2 = document.getElementsByClassName('bar2')[0];
         const navPage = document.getElementsByClassName('navpage')[0];
@@ -33,12 +33,12 @@ const Navpage = () => {
     }
     return (
         <div>
-            <div onClick={showNavPage} className="nav-icon">
+            <div onClick={toggleNavPage} className="nav-icon">
                 <div className="bar1"></div>
                 <div className="bar2"></div>
             </div>
             <div style={showMenu} className="navpage">
-                <Navbar></Navbar>
+                <Navbar toggle={toggleNavPage}></Navbar>
             </div>
         </div>
     );

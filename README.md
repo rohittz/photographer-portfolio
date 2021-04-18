@@ -11,3 +11,5 @@ Features:
 <br/><br/>
 <img src="/src/Images/gallery.png" width="100%" height="100%" align="center"> <br/>
 <br/><br/>
+
+- Login feature using google account to get your bookings.

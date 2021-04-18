@@ -20,7 +20,7 @@ import tech1 from '../../../Images/gallery/tech1.jpg';
 import Fade from 'react-reveal/Fade';
 const Gallery = () => {
     return (
-        <div className="gallery">
+        <div className="gallery" id="projects">
             <Fade big fraction={0.4}>
                 <div className="gallery-col">
                     <img src={animal1} alt="animal" />
