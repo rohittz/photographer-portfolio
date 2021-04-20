@@ -10,6 +10,9 @@ import Home from './components/Home/Home';
 import { createContext, useState } from 'react';
 import Privateroute from './components/Privateroute/Privateroute';
 import Login from './components/Login/Login';
+import Dashboard from './components/Dashboard/Dashboard';
+import LoginButton from './components/LoginButton/LoginButton';
+import Navpage from './components/Home/Navpage/Navpage';
 export const menuContext = createContext();
 export const userContext = createContext();
 export const historyContext = createContext();
@@ -31,15 +34,22 @@ function App() {
         <historyContext.Provider value={[currComp, setCurrComp]}>
           <userContext.Provider value={[loggedInUser, setLoggedInUser]}>
             <Router>
-              <Route path="/home">
-                <Home></Home>
-              </Route>
-              <Route exact path="/">
-                <Home></Home>
-              </Route>
-              <Route path="/login">
-                <Login></Login>
-              </Route>
+              <LoginButton></LoginButton>
+              <Navpage></Navpage>
+              <Switch>
+                <Route path="/home">
+                  <Home></Home>
+                </Route>
+                <Route exact path="/">
+                  <Home></Home>
+                </Route>
+                <Route path="/login">
+                  <Login></Login>
+                </Route>
+                <Privateroute path="/dashboard">
+                  <Dashboard></Dashboard>
+                </Privateroute>
+              </Switch>
             </Router>
           </userContext.Provider>
         </historyContext.Provider>

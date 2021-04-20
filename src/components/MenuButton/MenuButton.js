@@ -1,8 +1,9 @@
-import React, { createContext, useContext, useState } from 'react';
-import { menuContext } from '../../../App';
-import Navbar from '../Navbar/Navbar';
-import './Navpage.css';
-const Navpage = () => {
+import React, { useContext } from 'react';
+import { menuContext } from '../../App';
+import './MenuButton.css';
+
+const MenuButton = () => {
+
     const [showMenu, setShowMenu] = useContext(menuContext);
     const toggleNavPage = () => {
         const bar1 = document.getElementsByClassName('bar1')[0];
@@ -40,11 +41,8 @@ const Navpage = () => {
                 <div className="bar1"></div>
                 <div className="bar2"></div>
             </div>
-            <div style={showMenu} className="navpage">
-                <Navbar toggle={toggleNavPage}></Navbar>
-            </div>
         </div>
     );
 };
 
-export default Navpage;
+export default MenuButton;

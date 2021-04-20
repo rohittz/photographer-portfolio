@@ -1,0 +1,21 @@
+.login-icon {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20px;
+    border-radius: 100px;
+    cursor: pointer;
+    right: 20px;
+    width: 100px;
+    z-index: 1000;
+    transition: 0.25s all ease-in-out;
+    background-color: var(--main-text);
+    color: var(--main-back-1);
+    height: 40px;
+}
+
+.login-icon:hover {
+    color: var(--main-text);
+    background-color: var(--main-back-2);
+}

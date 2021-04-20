@@ -30,7 +30,7 @@ export const handleGoogleSignIn = () => {
                 name: displayName,
                 email: email,
                 photo: photoURL,
-                role: 'admin'
+                role: 'user'
             }
             getIdToken();
             return signedUser;

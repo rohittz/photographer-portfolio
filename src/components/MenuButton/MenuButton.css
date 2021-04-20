@@ -1,0 +1,33 @@
+.nav-icon {
+    cursor: pointer;
+    z-index: 10000;
+    position: fixed;
+    top: 20px;
+    transition: 0.25s all ease-in-out;
+    left: 20px;
+    background-color: var(--main-text);
+    display: flex;
+    flex-flow: column;
+    row-gap: 5px;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    align-items: center;
+}
+
+.nav-icon:hover {
+    background-color: var(--main-back-2);
+}
+
+.nav-icon:hover>.bar1, .nav-icon:hover>.bar2 {
+    background-color: var(--main-text);
+}
+
+.bar1, .bar2 {
+    width: 22px;
+    transition: 0.25s all ease-in-out;
+    height: 2px;
+    transform-origin: 10px 1px;
+    background-color: var(--main-back-1);
+}

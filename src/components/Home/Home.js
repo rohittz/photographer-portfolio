@@ -62,9 +62,9 @@ const reviews = [
 const Home = () => {
 
     const [currComp, setCurrComp] = useContext(historyContext);
-    useEffect(() => {
-        setCurrComp("/home");
-    })
+    // useEffect(() => {
+    //     setCurrComp("/home");
+    // })
     return (
         <div className="home">
             {/* header */}

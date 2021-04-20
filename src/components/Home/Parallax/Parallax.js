@@ -14,9 +14,9 @@ const Parallax = () => {
             else {
                 setoffset(window.pageYOffset);
             }
-            const name = document.getElementById("aaron-name");
-            const backPart = document.getElementById("aaron-back");
-            const frontPart = document.getElementById("aaron-front");
+            const name = document?.getElementById("aaron-name");
+            const backPart = document?.getElementById("aaron-back");
+            const frontPart = document?.getElementById("aaron-front");
             backPart.style.marginTop = -offset * 0.04 + 'px';
             name.style.paddingTop = offset * 1 + 'px';
             frontPart.style.marginTop = offset * 0.2 + 'px';
