@@ -12,6 +12,7 @@ const Navbar = (props) => {
     }
     const goToProjects = () => {
         props?.toggle();
+        history.push('/home')
         setCurrComp('/projects');
         console.log(currComp);
     }

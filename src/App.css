@@ -23,7 +23,7 @@
 
 .page-trans {
   animation-name: page;
-  animation-duration: 0.3s;
+  animation-duration: 0.4s;
   animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   animation-fill-mode: forwards;
   animation-direction: alternate;
