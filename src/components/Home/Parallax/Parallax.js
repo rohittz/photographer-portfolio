@@ -34,7 +34,7 @@ const Parallax = () => {
         <div className="parallax">
             <img className="image-fluid" src={aaronFront} id="aaron-front" alt="aaronFront" />
             <img className="image-fluid" id="aaron-back" src={aaronBack} alt="aaronBack" />
-            <h2 id="aaron-name">Aaron Stanley</h2>
+            <h2 id="aaron-name" >Aaron Stanley</h2>
         </div>
     );
 };
