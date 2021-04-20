@@ -17,6 +17,10 @@ const StyledButton = withStyles({
         borderRadius: 100,
         border: '2px solid gray',
         color: 'white',
+        display: 'flex',
+        flexFlow: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
         height: 48,
         padding: '0 30px'
     },
@@ -49,7 +53,7 @@ const Login = () => {
     }
     return (
         <div className="login-container page-trans">
-            <div className="login">
+            <div className="login ">
                 <div className="login-message">
                     Let's log in...
             </div>

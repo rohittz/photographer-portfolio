@@ -1,8 +1,16 @@
 import React from 'react';
 import './Service.css';
 import { Zoom } from 'react-reveal'
+import { useHistory } from 'react-router';
 const Service = (props) => {
+    const history = useHistory();
     const service = props?.service;
+    const handleBooking = () => {
+        history.push({
+            pathname: '/dashboard/book',
+            state: { service: service }
+        })
+    }
     return (
         <Zoom fraction={0.5}>
             <div className="service">
@@ -16,7 +24,7 @@ const Service = (props) => {
                     <div className="price">
                         <span>${service.price}</span>
                     </div>
-                    <div className="book-btn">
+                    <div onClick={handleBooking} className="book-btn">
                         Book
                     </div>
                 </div>

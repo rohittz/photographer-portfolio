@@ -1,0 +1,74 @@
+.main-tab {
+    min-height: 100vh;
+    padding: 120px 10px;
+    background-color: var(--main-back-2);
+    box-shadow: inset 12px 0 12px -10px rgba(0, 0, 0, 0.7);
+}
+
+.options {
+    display: flex;
+    flex-flow: column nowrap;
+    padding-right: 0px;
+    padding-top: 85px;
+}
+
+.option-admin, .icon-container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.option-icon {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+/* style for all input fields in this component */
+
+.inputfield {
+    background-color: transparent;
+    border: 1px solid var(--main-semi-0);
+    transition: 0.25s all cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    outline: 0;
+    max-width: 300px;
+    padding: 9px 10px;
+    padding-left: 15px;
+    border-radius: 7px;
+    cursor: text;
+    color: var(--main-text);
+}
+
+input::placeholder {
+    color: var(--main-semi-0);
+}
+
+.MuiButton-root:hover {
+    background-color: black!important;
+    color: var(--main-text);
+}
+
+input:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.option-admin {
+    width: 170px;
+    transition: 0.2s all ease;
+    flex-flow: row;
+    padding: 10px 0px;
+    padding-left: 20px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.dashboard-container {
+    padding-bottom: 0px;
+    color: var(--main-text);
+}
+
+.icon-container {
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+}

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import firebase from 'firebase/app';
 import firebaseConfig from './firebase.config';
 import "firebase/auth";
@@ -19,6 +19,7 @@ const getIdToken = () => {
     });
 
 }
+
 export const handleGoogleSignIn = () => {
     const providerGoogle = new firebase.auth.GoogleAuthProvider();
     return firebase.auth()
@@ -34,6 +35,7 @@ export const handleGoogleSignIn = () => {
             }
             getIdToken();
             return signedUser;
+
         }).catch((error) => {
             const { code, message } = error;
             const errorInfo = {

@@ -1,0 +1,74 @@
+.addadmin {
+    display: flex;
+    flex-flow: column;
+    column-gap: 20px;
+    row-gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+#condition {
+    width: 100%;
+    color: black;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+    border-top-left-radius: 0px;
+    text-align: center;
+    margin-top: 10px;
+    position: relative;
+}
+
+#condition::after {
+    content: '';
+    position: absolute;
+    border: 15px solid rgba(255, 255, 255, 0.4);
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    transform-origin: 50% 0%;
+    transform: rotate(180deg);
+    left: 0;
+    top: 0;
+}
+
+.inputbox {
+    width: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+.addStatus {
+    position: fixed;
+    width: 220px;
+    padding: 10px 10px;
+    background-color: var(--main-back-1);
+    color: var(--main-text);
+    bottom: 10px;
+    left: 50%;
+    margin-left: -110px;
+    animation-name: status;
+    transition: 0.3s all ease;
+    animation-duration: 0.7s;
+    animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    animation-iteration-count: 1;
+}
+
+@keyframes status {
+    0% {
+        opacity: 0;
+        transform: translateY(-60px);
+    }
+    10% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
