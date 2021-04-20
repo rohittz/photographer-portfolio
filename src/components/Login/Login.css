@@ -1,15 +1,36 @@
-.login {
+.login-container {
+    background: url(../../Images/gallery/people3.jpg);
+    background-position: 25% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+}
+
+.login-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    background: linear-gradient(90deg, rgba(15, 12, 17, 0.9) 0%, rgba(15, 12, 17, 0.93) 40%, rgba(15, 12, 17, 0.96) 80%, rgba(15, 12, 17, 1) 100%);
+    z-index: -1;
+}
+
+.login {
+    width: 300px;
+    height: 300px;
     flex-flow: column;
     row-gap: 30px;
 }
 
 .login-message {
     font-size: 25px;
+    color: var(--main-text);
 }
 
-.login-third, .iconbox, .third-text, .login {
+.login-third, .iconbox, .third-text, .login, .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,18 +47,15 @@
 }
 
 .login-third:hover>.third-text {
-    background-color: rgba(255, 255, 255, 0.9);
     color: black;
 }
 
 .iconbox {
     height: 45px;
-    background-color: var(--main-back-3);
-    border-radius: 100px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
+    /* background-color: var(--main-back-2); */
     width: 39px;
     padding-left: 5px;
+    margin-right: 15px;
 }
 
 .google-icon {
@@ -54,7 +72,6 @@
     letter-spacing: 1.2px;
     outline: 0px;
     font-size: 16px;
-    background-color: var(--main-back-1);
     border: 0px;
     position: relative;
     color: var(--main-text);
