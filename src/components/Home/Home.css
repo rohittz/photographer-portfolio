@@ -49,8 +49,8 @@
     display: flex;
     flex-flow: column;
     row-gap: 40px;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     border-left: 6px solid rgba(26, 36, 54, 1);
 }
 

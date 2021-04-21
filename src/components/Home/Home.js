@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Header from './Header/Header';
 import Service from './Service/Service';
 import wedding from '../../Images/wedding.jpg';
@@ -39,28 +39,19 @@ const services = [
         details: " Praesent et faucibus tortor. Nunc libero erat, gravida eu posuere eu, sodales et urna. Nulla ornare diam id nunc pulvinar, sit amet imperdiet velit pulvinar."
     }
 ];
-const reviews = [
-    {
-        name: 'Mr. Reftel Nickolas',
-        image: peopleIcon,
-        star: 4,
-        details: "Duis semper accumsan molestie. Donec tincidunt elit vitae augue aliquet, id ultricies lorem tincidunt. Curabitur pharetra nunc vitae elit venenatis, ac iaculis felis lobortis."
-    },
-    {
-        name: 'Mr. Reftel Nickolas',
-        image: peopleIcon,
-        star: 4,
-        details: "Duis semper accumsan molestie. Donec tincidunt elit vitae augue aliquet, id ultricies lorem tincidunt. Curabitur pharetra nunc vitae elit venenatis, ac iaculis felis lobortis."
-    },
-    {
-        name: 'Mr. Reftel Nickolas',
-        image: peopleIcon,
-        star: 4,
-        details: "Duis semper accumsan molestie. Donec tincidunt elit vitae augue aliquet, id ultricies lorem tincidunt. Curabitur pharetra nunc vitae elit venenatis, ac iaculis felis lobortis."
-    }
-]
-const Home = () => {
 
+const Home = () => {
+    const [reviews, setReviews] = useState([]);
+    useEffect(() => {
+        fetch('https://aaron-stanley.herokuapp.com/reviews', {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' }
+        })
+            .then(res => res.json())
+            .then(data => {
+                setReviews(data.slice(0, 4));
+            })
+    }, [])
     const [currComp, setCurrComp] = useContext(historyContext);
     // useEffect(() => {
     //     setCurrComp("/home");
@@ -73,7 +64,7 @@ const Home = () => {
             <div className="section-title">
                 Services
             </div>
-            <div className="services">
+            <div id="services-tab" className="services">
 
                 {
                     services.map(service =>
@@ -91,8 +82,7 @@ const Home = () => {
             <div className="testimonials">
                 <div className="testimonials-inner">
                     {
-                        reviews.map(review =>
-                            <Review review={review}></Review>)
+                        reviews.map(review => <Review review={review}></Review>)
                     }
                 </div>
             </div>

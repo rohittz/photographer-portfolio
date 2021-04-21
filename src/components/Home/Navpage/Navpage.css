@@ -18,6 +18,7 @@
 
 .nav-icon:hover {
     background-color: var(--main-back-2);
+    border: 2px solid var(--main-semi-0);
 }
 
 .nav-icon:hover>.bar1, .nav-icon:hover>.bar2 {

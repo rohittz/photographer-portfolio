@@ -2,14 +2,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
 import { historyContext, userContext } from '../../../App';
 import loading from '../../../Images/loading.svg';
-import Buttonmat from '../../Buttonmat';
-import { handleGoogleSignIn } from '../../Login/LoginManager';
-import './OrderList.css';
+import './BookingList.css'
 
-const OrderList = () => {
+const BookingList = () => {
+
     const [onGoing, setOnGoing] = useState(false);
-    const [selectedStatus, setSelectedStatus] = useState('Pending');
-    const [selectedBook, setSelectedBook] = useState({})
     const history = useHistory();
     const [bookings, setBookings] = useState([]);
     const [loggedInUser, setLoggedInUser] = useContext(userContext);
@@ -20,7 +17,7 @@ const OrderList = () => {
     }
     useEffect(() => {
         setOnGoing(true);
-        fetch('https://aaron-stanley.herokuapp.com/bookinglist?email=admin', {
+        fetch('https://aaron-stanley.herokuapp.com/bookinglist?email=' + loggedInUser.email, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         })
@@ -30,12 +27,6 @@ const OrderList = () => {
                 setBookings(data);
             })
     }, [loggedInUser.email]);
-    const handleSelect = (book, status) => {
-        setSelectedStatus(status);
-        const updatedBook = { ...book };
-        updatedBook.status = status;
-        // to be continued :(
-    }
     return (
         <div className="bookinglist-container page-trans">
             {
@@ -47,7 +38,6 @@ const OrderList = () => {
                     <table className="tableData">
                         <thead>
                             <tr>
-                                <th>Customer Email</th>
                                 <th>Service Name</th>
                                 <th>Booking Date</th>
                                 <th>Status</th>
@@ -57,34 +47,22 @@ const OrderList = () => {
                             {
                                 bookings.map(book =>
                                     <tr>
-                                        <td>{book.email}</td>
                                         <td>{book.serviceTitle}</td>
                                         <td>{new Date(book.date).toDateString('DD/MM/YYYY')}</td>
-                                        <td className="status-option">
-                                            <div className="status-grp">
-                                                <div className="statuses">
-                                                    <div onClick={() => handleSelect(book, 'pending')} className={`status status-pending ${book.status === 'pending' ? "status-active" : ""}`}> Pending</div>
-                                                    <div onClick={() => handleSelect(book, 'ongoing')} className={`status status-ongoing ${book.status === 'ongoing' ? "status-active" : ""}`}>Ongoing</div>
-                                                    <div onClick={() => handleSelect(book, 'done')} className={`status status-done${book.status === 'done' ? "status-active" : ""}`}>Done</div>
-                                                </div>
-                                                <div className="button-container" onClick={handleSelect}>
-                                                    <Buttonmat text={`Change to ${selectedStatus}`}></Buttonmat>
-                                                </div>
-                                            </div>
-
-
-                                        </td>
+                                        <td><span className={`status status-${book.status}`}>{book.status}</span></td>
                                     </tr>
                                 )
                             }
                         </tbody>
                     </table>
                     :
-                    <div> There is no Orders yet</div>
+                    <a href="#services-tab" id="onpage-link">
+                        <div onClick={goToServices}> Go to service tab to book new services</div>
+                    </a>
 
             }
         </div>
     );
 };
 
-export default OrderList;
+export default BookingList;

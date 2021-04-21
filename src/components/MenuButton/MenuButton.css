@@ -16,10 +16,6 @@
     align-items: center;
 }
 
-.nav-icon:hover {
-    background-color: var(--main-back-2);
-}
-
 .nav-icon:hover>.bar1, .nav-icon:hover>.bar2 {
     background-color: var(--main-text);
 }

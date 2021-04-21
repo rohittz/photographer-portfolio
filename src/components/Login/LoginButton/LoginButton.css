@@ -18,4 +18,5 @@
 .login-icon:hover {
     color: var(--main-text);
     background-color: var(--main-back-2);
+    border: 2px solid var(--main-semi-0);
 }

@@ -2,6 +2,7 @@
     background-color: rgba(26, 36, 54, 0.4);
     color: var(--main-text);
     /* margin-bottom: 50px; */
+    width: 100%;
     padding: 20px 20px;
     transform-origin: 0px 50%;
     transition: 0.25s all ease-in-out;
@@ -12,12 +13,17 @@
     background-color: rgba(25, 36, 54, 0.6);
 }
 
-.reie .review-inner, .review-user-details {
+.review-inner, .review-user-details {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     row-gap: 10px;
     align-items: center;
+}
+
+.review-inner {
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .review-user-details {

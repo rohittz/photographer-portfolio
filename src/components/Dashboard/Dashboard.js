@@ -7,32 +7,50 @@ import {
     Link,
     useHistory
 } from "react-router-dom";
-import { withStyles } from '@material-ui/core/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClipboardList, faPlus, faPlusSquare, faShoppingBag, faUserLock, faUserPlus, faWrench } from '@fortawesome/free-solid-svg-icons';
 import Button from '@material-ui/core/Button';
-import { adminContext, userContext } from '../../App';
+import { adminContext, historyContext, userContext } from '../../App';
 import AddAdmin from './AddAdmin/AddAdmin';
 import AddService from './AddService/AddService';
 import OrderList from './OrderList/OrderList';
 import ManageServices from './ManageServices/ManageServices';
 import Privateroute from '../Privateroute/Privateroute';
+import styled from 'styled-components';
 import Book from '../Book/Book';
-const StyledButton = withStyles({
-    root: {
-        background: 'var(--main-back-2)',
-        width: '100%',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.5)',
-        borderRadius: '0px',
-        color: 'white',
-        height: 48,
-    },
-    label: {
-        textTransform: 'capitalize',
-    },
-})(Button);
+import BookingList from './BookingList/BookingList';
+import AddReview from './AddReview/AddReview';
 
+// const StyledButton = withStyles({
+//     root: {
+//         background: 'var(--main-back-2)',
+//         width: '100%',
+//         borderBottom: '1px solid rgba(255, 255, 255, 0.5)',
+//         borderRadius: '0px',
+//         color: 'white',
+//         height: 48,
+//     },
+//     label: {
+//         textTransform: 'capitalize',
+//     },
+// })(Button);
+
+const StyledButton = styled(Button)`
+  background-color: var(--main-back-2);
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0px;
+  transition: 0.25s all ease-in-out;
+  color: var(--main-text);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  padding: 2px 40px;
+  &:hover {
+      background-color: rgba(14, 20, 32);
+      color: black;
+  }
+`;
 const Dashboard = () => {
+    const [currComp, setCurrComp] = useContext(historyContext);
     const history = useHistory();
     const [loggedInUser, setLoggedInUser] = useContext(userContext);
     const [adminList, setAdminList] = useContext(adminContext);
@@ -47,19 +65,39 @@ const Dashboard = () => {
     }
     useEffect(() => {
         handleAdmin();
+        // if (loggedInUser.role === 'user') {
+        //     history.push('/dashboard/bookinglist');
+        //     setCurrComp('/dashboard/bookinglist');
+        // }
     }, []);
     // to add new admin
-    const goToAdmin = () => {
+    const goToAddAdmin = () => {
         history.push('/dashboard/addadmin');
+        setCurrComp('/dashboard/addadmin');
     }
     const goToOrderList = () => {
         history.push('/dashboard/orderlist');
+        setCurrComp('/dashboard/orderlist')
     }
     const goToAddService = () => {
         history.push('/dashboard/addservice');
+        setCurrComp('/dashboard/addservice')
     }
     const goToManageServices = () => {
         history.push('/dashboard/manageservices');
+        setCurrComp('/dashboard/manageservices')
+    }
+    const goToBook = () => {
+        history.push('/dashboard/book');
+        setCurrComp('/dashboard/book');
+    }
+    const goToBookingList = () => {
+        history.push('/dashboard/bookinglist');
+        setCurrComp('/dashboard/bookinglist');
+    }
+    const goToaddReview = () => {
+        history.push('/dashboard/addreview');
+        setCurrComp('/dashboard/addreview');
     }
     return (
         <div className="container-fluid dashboard-container page-trans">
@@ -69,26 +107,30 @@ const Dashboard = () => {
                         loggedInUser?.role == "admin" ?
                             <div className="admin-options">
                                 {/* for admin */}
+                                {/* orderlist */}
                                 <StyledButton>
-                                    <div className={`option-admin`} onClick={goToOrderList}>
+                                    <div className={`single-option ${currComp === '/dashboard/orderlist' ? "marknv" : "nomarknv"}`} onClick={goToOrderList}>
                                         <div className="icon-container"><FontAwesomeIcon className="option-icon" icon={faClipboardList} /></div>
                                         <div className="op-name">Order List</div>
                                     </div>
                                 </StyledButton>
+                                {/* add admin */}
                                 <StyledButton>
-                                    <div className={`option-admin `} onClick={goToAdmin}>
+                                    <div className={`single-option ${currComp === '/dashboard/addadmin' ? "marknv" : "nomarknv"}`} onClick={goToAddAdmin}>
                                         <div className="icon-container"><FontAwesomeIcon className="option-icon" icon={faUserPlus} /></div>
                                         <div className="op-name">Add Admin</div>
                                     </div>
                                 </StyledButton>
+                                {/* add service */}
                                 <StyledButton>
-                                    <div className={`option-admin `} onClick={goToAddService}>
+                                    <div className={`single-option ${currComp === '/dashboard/addservice' ? "marknv" : "nomarknv"}`} onClick={goToAddService}>
                                         <div className="icon-container"><FontAwesomeIcon className="option-icon" icon={faPlus} /></div>
                                         <div className="op-name">Add Service</div>
                                     </div>
                                 </StyledButton>
+                                {/* manage service */}
                                 <StyledButton>
-                                    <div className={`option-admin `} onClick={goToManageServices}>
+                                    <div className={`single-option ${currComp === '/dashboard/manageservices' ? "marknv" : "nomarknv"}`} onClick={goToManageServices}>
                                         <div className="icon-container"><FontAwesomeIcon className="option-icon" icon={faWrench} /></div>
                                         <div className="op-name">Manage Services</div>
                                     </div>
@@ -96,19 +138,19 @@ const Dashboard = () => {
                             </div>
                             : <div className="customer-options">
                                 <StyledButton>
-                                    <div className={`option-admin `} onClick={goToAddService}>
+                                    <div className={`single-option ${currComp === '/dashboard/book' ? "marknv" : "nomarknv"}`} onClick={goToBook}>
                                         <div className="icon-container"><FontAwesomeIcon className="option-icon" icon={faShoppingBag} /></div>
                                         <div className="op-name">Book</div>
                                     </div>
                                 </StyledButton>
                                 <StyledButton>
-                                    <div className={`option-admin `} onClick={goToAddService}>
+                                    <div className={`single-option ${currComp === '/dashboard/bookinglist' ? "marknv" : "nomarknv"}`} onClick={goToBookingList}>
                                         <div className="icon-container"><FontAwesomeIcon className="option-icon" icon={faClipboardList} /></div>
                                         <div className="op-name">Booking List</div>
                                     </div>
                                 </StyledButton>
                                 <StyledButton>
-                                    <div className={`option-admin `} onClick={goToAddService}>
+                                    <div className={`single-option ${currComp === '/dashboard/addreview' ? "marknv" : "nomarknv"}`} onClick={goToaddReview}>
                                         <div className="icon-container"><FontAwesomeIcon className="option-icon" icon={faPlus} /></div>
                                         <div className="op-name">Add Review</div>
                                     </div>
@@ -118,22 +160,31 @@ const Dashboard = () => {
                 </div>
                 <div className="col-lg-9 main-tab">
                     <Switch>
-                        <Route path="/dashboard/addadmin">
+                        {/* admin */}
+                        <Privateroute path="/dashboard/addadmin">
                             <AddAdmin></AddAdmin>
-                        </Route>
-                        <Route path="/dashboard/addservice">
+                        </Privateroute>
+                        <Privateroute path="/dashboard/addservice">
                             <AddService></AddService>
-                        </Route>
-                        <Route path="/dashboard/orderlist">
+                        </Privateroute>
+                        <Privateroute path="/dashboard/orderlist">
                             <OrderList></OrderList>
-                        </Route>
+                        </Privateroute>
+                        <Privateroute path="/dashboard/manageservices">
+                            <ManageServices></ManageServices>
+                        </Privateroute>
+                        {/* customers */}
                         <Privateroute path="/dashboard/book">
                             <Book></Book>
                         </Privateroute>
+                        <Privateroute path="/dashboard/bookinglist">
+                            <BookingList></BookingList>
+                        </Privateroute>
+                        <Privateroute path="/dashboard/addreview">
+                            <AddReview></AddReview>
+                        </Privateroute>
 
-                        <Route path="/dashboard/manageservices">
-                            <ManageServices></ManageServices>
-                        </Route>
+
                     </Switch>
                 </div>
             </div>

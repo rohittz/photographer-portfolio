@@ -1,0 +1,54 @@
+.bookinglist-container {
+    /* font-size: 15px; */
+    display: flex;
+    padding: 20px 0px;
+    overflow-x: scroll;
+    width: 100%;
+    scrollbar-width: thin;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+.tableData {
+    width: 100%;
+    min-width: 450px;
+}
+
+.tableData td, .tableData th {
+    text-align: left;
+}
+
+.tableData th {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.tableData th, .tableData td {
+    padding: 15px 6px;
+}
+
+.tableData tr:nth-child(even) {
+    background-color: rgba(4, 26, 41, 0.5);
+}
+
+.status {
+    padding: 6px 15px;
+    text-align: center;
+    cursor: default;
+    transition: 0.25s all ease-in-out;
+    border-radius: 100px;
+}
+
+.status-pending {
+    background-color: rgba(231, 54, 54, 0.432);
+    border: 1px solid rgba(231, 54, 108, 1);
+}
+
+.status-ongoing {
+    background-color: rgba(221, 207, 81, 0.432);
+    border: 1px solid rgba(221, 207, 81, 1);
+}
+
+.status-done {
+    background-color: rgba(77, 223, 133, 0.432);
+    border: 1px solid rgba(77, 223, 133, 1);
+}

@@ -30,9 +30,9 @@
 }
 
 .marknv {
-    color: var(--main-text);
+    color: rgb(252, 252, 252);
 }
 
 .nomarknv {
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.37);
 }

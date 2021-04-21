@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Service.css';
 import { Zoom } from 'react-reveal'
 import { useHistory } from 'react-router';
+import { historyContext } from '../../../App';
 const Service = (props) => {
+    const [currComp, setCurrComp] = useContext(historyContext);
     const history = useHistory();
     const service = props?.service;
     const handleBooking = () => {
@@ -10,6 +12,7 @@ const Service = (props) => {
             pathname: '/dashboard/book',
             state: { service: service }
         })
+        setCurrComp('/dashboard/book');
     }
     return (
         <Zoom fraction={0.5}>

@@ -35,8 +35,8 @@ const AddAdmin = () => {
         setIsEmailValid(isvalid);
     }
     return (
-        <div>
-            <form className="addadmin">
+        <div className="book-container page-trans">
+            <form className="formfield">
                 <div className="inputbox">
                     <input onChange={handleBlur} className="inputfield" placeholder="Enter Email" type="email" name="user-email" id="user-email" />
 

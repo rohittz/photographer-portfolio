@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Fade } from 'react-reveal';
+import userImage from '../../../Images/peopleicon.png';
 import './Review.css';
 
 const Review = (props) => {
@@ -10,16 +11,17 @@ const Review = (props) => {
                 <div className="review-inner">
                     <div className="review-user-details">
                         <div className="userImage">
-                            <img src={review.image} alt="" />
+                            <img src={userImage} alt="" />
                         </div>
                         <div className="user-name">
-                            {review.name}
+                            {review.name}, {review.profession}
                         </div>
                     </div>
                     <div className="review-text">
-                        {review.details}
+                        {review.description}
                     </div>
                 </div>
+
             </div>
         </Fade>
     );

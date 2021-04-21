@@ -9,7 +9,6 @@ const Parallax = () => {
     let [offset, setoffset] = useState(0);
     useEffect(() => {
         window.onscroll = () => {
-            console.log(window.pageYOffset);
             if (window.pageYOffset < 0) {
                 setoffset(0);
             }

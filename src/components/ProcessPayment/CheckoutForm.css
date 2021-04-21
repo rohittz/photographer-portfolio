@@ -1,0 +1,40 @@
+.payment-form {
+    display: flex;
+    width: 100%;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    width: 100%;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 300;
+    text-align: left;
+    letter-spacing: 0.025em;
+}
+
+.StripeElement {
+    display: block;
+    margin: 10px 0 20px 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 14px 14px;
+    outline: 0;
+    color: white!important;
+    border-radius: 8px;
+}
+
+.StripeElement--focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    -webkit-transition: all 150ms ease;
+    transition: all 150ms ease;
+}
+
+.StripeElement.IdealBankElement, .StripeElement.FpxBankElement, .StripeElement.PaymentRequestButton {
+    padding: 0;
+}
+
+.StripeElement.PaymentRequestButton {
+    height: 40px;
+}
