@@ -49,7 +49,7 @@ const Home = () => {
         })
             .then(res => res.json())
             .then(data => {
-                setReviews(data.slice(0, 4));
+                setReviews(data.slice(data?.length - 3, data?.length));
             })
     }, [])
     const [currComp, setCurrComp] = useContext(historyContext);
