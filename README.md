@@ -1,8 +1,10 @@
 The live site:
 https://aaron-stanley.web.app/
+<br/>
 <img src="/src/Images/aaron-header.png" width="100%" height="100%" align="center"> <br/>
 <br/><br/>
 <img src="/src/Images/gallery.png" width="100%" height="100%" align="center"> <br/>
+<br/>
 Features:
 - A photography service management website built with React.js, Express.js and MongoDB.
 - Used React, Material UI, CSS3 to create the stunning UI.
